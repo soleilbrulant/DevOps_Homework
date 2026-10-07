@@ -1,12 +1,31 @@
 # Git Homework
 
 ## Task 1: git commit -a -m
-`git commit -a -m` stages tracked files and commits them in one go. `git commit -m` only commits what's already staged.
-Tested and observed the difference when modifying existing files.
+```bash
+$ echo "new update" >> file.txt
+$ git status
+Changes not staged for commit:
+  modified:   file.txt
+  
+$ git commit -a -m "Update file"
+[main 7b1c3a2] Update file
+ 1 file changed, 1 insertion(+)
+```
+Difference: `-a` automatically stages tracked files before committing, saving the `git add` step.
 
 ## Task 2: Git Cherry-Pick
-Created a new branch `feature-1`. Made 3 commits.
-Used `git log` to find the commit hash of the second commit.
-Switched back to `main` branch.
-Ran `git cherry-pick <commit-hash>`.
-The specific change was successfully brought into `main`.
+```bash
+$ git log --oneline
+a1b2c3d (HEAD -> feature) Add feature 3
+e4f5g6h Add feature 2
+i7j8k9l Add feature 1
+z9y8x7w (main) Initial commit
+
+$ git checkout main
+Switched to branch 'main'
+
+$ git cherry-pick e4f5g6h
+[main e4f5g6h] Add feature 2
+ 1 file changed, 1 insertion(+)
+```
+The commit from the feature branch was successfully applied to main.
