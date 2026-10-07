@@ -1,0 +1,1 @@
+FQDN format: `<service>.<namespace>.svc.cluster.local`

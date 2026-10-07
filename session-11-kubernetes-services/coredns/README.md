@@ -1,0 +1,1 @@
+CoreDNS resolves K8s service names to their IPs.

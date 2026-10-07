@@ -1,1 +1,1 @@
-# 02-shell-scripting
+System info script created and tested successfully. See sysinfo.sh.
