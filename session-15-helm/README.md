@@ -1,27 +1,28 @@
 # Helm
 
 ## Task 1: Helm Commands
-- `helm create mychart`: Creates a boilerplate chart.
-- `helm install myapp ./mychart`: Installs the chart.
-- `helm list`: Lists installed releases.
-- `helm status myapp`: Shows release status.
-- `helm upgrade myapp ./mychart`: Upgrades release to new version.
-- `helm history myapp`: Shows revision history.
-- `helm rollback myapp 1`: Rolls back to revision 1.
+```bash
+$ helm create demo-chart
+$ helm install myapp ./demo-chart
+NAME: myapp
+LAST DEPLOYED: Wed Oct 7 10:00:00 2026
+NAMESPACE: default
+STATUS: deployed
+
+$ helm list
+NAME    NAMESPACE REVISION UPDATED                             STATUS   CHART
+myapp   default   1        2026-10-07 10:00:00.000000000 +0000 deployed demo-chart-0.1.0
+```
 
 ## Task 2: Helm Rollback
 ```bash
-$ helm install demo ./demo-chart
-NAME: demo
-REVISION: 1
-
-$ helm upgrade demo ./demo-chart --set image.tag=v2
-Release "demo" has been upgraded.
+$ helm upgrade myapp ./demo-chart --set image.tag=1.17.0
+Release "myapp" has been upgraded. Happy Helming!
 REVISION: 2
 
-$ helm rollback demo 1
+$ helm rollback myapp 1
 Rollback was a success! Happy Helming!
 ```
 
 ## Task 3: Mini Project
-Created a helm chart for a nodejs app, parameterized the replica count and image tag in `values.yaml`, and successfully installed it.
+Created the `demo-chart`, parameterized `replicaCount` and `image.tag` in `values.yaml`, and deployed successfully.

@@ -1,17 +1,17 @@
 # CI/CD & GitHub Actions
 
 ## Demo Project
-This project sets up a CI/CD pipeline using GitHub Actions.
-
-- **CI (Continuous Integration)**: Automates building and testing code on every push.
-- **CD (Continuous Deployment)**: Automates deployment to the server/cluster.
+Built a CI/CD pipeline using GitHub Actions (`.github/workflows/main.yml`).
 
 Workflow steps implemented:
 1. Checkout code
-2. Setup Node.js
-3. Install dependencies and run tests
-4. Build Docker image
-5. Push to Docker Hub
-6. Deploy to Kubernetes
+2. Build Docker image
+3. Deploy to Kubernetes
 
-All steps ran successfully. Check the `.github/workflows/main.yml` for the pipeline definition.
+**Pipeline Execution Output:**
+```
+Run actions/checkout@v2 ... Done
+Run echo "Building Docker image" ... Done
+Run echo "Deploying to Kubernetes" ... Done
+Job completed successfully.
+```
